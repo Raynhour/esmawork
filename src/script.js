@@ -1,15 +1,8 @@
-class Dog {
-	constructor(title){
-		this.title= "vova";
-		
-		console.log(Dog.title);
-	}
-	get name () {
-		return this._lastName = "again";
-	}
-}
+let person = {
+	firstName: "john",
+	lastName: "will"
+};
 
-let scream = new Dog("vova");
-let name = scream.name;
-console.log(name);
-console.log(scream.title);
+let {firstName, lastName} = person;
+
+console.log(firstName,lastName);
