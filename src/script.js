@@ -1,27 +1,18 @@
-class Dog {
-	constructor(){
-		this._bark = "gavgavgav";
+class Worker {
+	constructor(name, surname, rate , date) {
+		this._name = name;
+		this._surname = surname;
+		this._rate = rate;
+		this._date = date;
 	}
-	bark () {
-		console.log(this._bark);
+	getSellery() {
+		return this._rate * this._date;
 	}
 	
 }
 
-class SubDog extends Dog {
-	constructor(parent) {
-		super();
-		this.parent = parent;
-	}
-	bark () {
-		this._bark = "gavmewgavmew";
-	}
-}
+const work = new Worker("volodymyr", "kopynets", 15, 7 );
+const anton = new Worker("anton","pashko", 20, 2);
 
-scream.bark();
-
-const scream = new Dog();
-const subscream = new SubDog(scream);
-
-scream.bark();
-subscream.bark();
+console.log(`${work._name} ${work._surname} get his ${work.getSellery()}`);
+console.log(`${anton._name} ${anton._surname} get his ${anton.getSellery()}`);
