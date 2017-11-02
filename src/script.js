@@ -1,18 +1,26 @@
-class Worker {
-	constructor(name, surname, rate , date) {
-		this._name = name;
-		this._surname = surname;
-		this._rate = rate;
-		this._date = date;
+class MyString {
+	constructor() {
+
 	}
-	getSellery() {
-		return this._rate * this._date;
+	reverse(text) {
+		return console.log(text.split("").reverse().join(""));
 	}
-	
+	ucFirst(text) {
+		return console.log(text[0].toUpperCase() + text.slice(1));
+	}
+	ucWords(text) {
+		let texts = text.split(" ");
+		for (let i=0;i<texts.length;i++) {
+			let letter = texts[i].split("");
+			texts[i] = letter[0].toUpperCase() + letter.slice(1).join("");
+		}
+		texts = texts.join(" ");
+		console.log(texts);
+	}
 }
 
-const work = new Worker("volodymyr", "kopynets", 15, 7 );
-const anton = new Worker("anton","pashko", 20, 2);
+var str = new MyString();
+str.reverse("vova");
 
-console.log(`${work._name} ${work._surname} get his ${work.getSellery()}`);
-console.log(`${anton._name} ${anton._surname} get his ${anton.getSellery()}`);
+str.ucFirst("vova");
+str.ucWords("vova anton artur vasya");
